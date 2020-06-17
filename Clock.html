@@ -3,14 +3,14 @@
     <head>
         <link href="Design.css" rel="stylesheet">
         <!-- Defer ???  -->
-        <script defer src="test.js"></script>
+        <script defer src="Script.js"></script>
         <title>Simple Clock</title>
     </head>
     <body> 
         <div class="clock">
-            <div class="hand hour"></div>
-            <div class="hand minute"></div>
-            <div class="hand second"></div>
+            <div class="hand hour" data-hour></div>
+            <div class="hand minute" data-minute></div>
+            <div class="hand second" data-second></div>
             <!-- Use of Emmet  div.number.n$*12{$}*12-->
             <div class="number n1">1</div>
             <div class="number n2">2</div>

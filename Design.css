@@ -59,17 +59,15 @@ body{
     transform: translate(-50%) rotate(calc(var(--rotation)*1deg));
 }
 /* Overwriting properties for minute hand */
-.clock .minute{--rotation:0}
+.clock .minute{}
 
 /* Overwriting properties for hour hand */
 .clock .hour{
-    --rotation:30;
     height: 80px;
 }
 
 /* Overwriting properties for second hand */
 .clock .second{
-    --rotation:60;
     width: 2px;
     background-color: red;
 }
