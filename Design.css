@@ -1,0 +1,90 @@
+/* Creating a Canvas for Clock */
+
+body{
+    background-color: aqua;
+}
+/* Layout of our clock */
+.clock {
+    /* Relative v/s Absolute positioning*/
+    position: relative;
+    width: 300px;
+    height: 300px;
+    /* Setting Opacity*/
+    background-color: rgba(255,255,255,0.7);
+    border-radius: 150px;
+    border: 2px solid green ;
+}
+
+/* Why .clock .number ?? Some information about Selectors*/
+/* This block of code just creates a box containing number */
+.clock .number{
+    /* Variable --rotation??? */
+    --rotation : 0;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    font-size: 20px;
+    /* background-color: orange; */
+    text-align: center;
+    /* For rotating the numbers */
+    transform: rotate(calc(var(--rotation)*1deg));
+}
+
+/* Putting all numbers on the clock */
+.clock .n1{ --rotation:30;}
+.clock .n2{ --rotation:60;}
+.clock .n3{ --rotation:90;}
+.clock .n4{ --rotation:120;}
+.clock .n5{ --rotation:150;}
+.clock .n6{ --rotation:180;}
+.clock .n7{ --rotation:210;}
+.clock .n8{ --rotation:240;}
+.clock .n9{ --rotation:270;}
+.clock .n10{ --rotation:300;}
+.clock .n11{ --rotation:330;}
+
+/* Designing all hands element at once*/
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    height: 125px;
+    z-index: 10px;
+    width: 5px;
+    background-color: black;
+    bottom: 50%;
+    left: 50%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    transform-origin: bottom;
+    transform: translate(-50%) rotate(calc(var(--rotation)*1deg));
+}
+/* Overwriting properties for minute hand */
+.clock .minute{--rotation:0}
+
+/* Overwriting properties for hour hand */
+.clock .hour{
+    --rotation:30;
+    height: 80px;
+}
+
+/* Overwriting properties for second hand */
+.clock .second{
+    --rotation:60;
+    width: 2px;
+    background-color: red;
+}
+
+/* Before - After Selector */
+.clock::after{
+    content: '';
+    position: absolute;
+    z-index: 20;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+    border-radius: 10px;
+}
+
