@@ -1,18 +1,22 @@
 /* Creating a Canvas for Clock */
 
 body{
-    background-color: aqua;
+    background-color: red;
 }
 /* Layout of our clock */
 .clock {
     /* Relative v/s Absolute positioning*/
     position: relative;
+    top: 200px;
+    overflow: hidden;
+    left: 50%;
     width: 300px;
     height: 300px;
     /* Setting Opacity*/
     background-color: rgba(255,255,255,0.7);
     border-radius: 150px;
-    border: 2px solid green ;
+    border: 3px solid black ;
+    transform: translate(-50%) 
 }
 
 /* Why .clock .number ?? Some information about Selectors*/
@@ -59,7 +63,7 @@ body{
     transform: translate(-50%) rotate(calc(var(--rotation)*1deg));
 }
 /* Overwriting properties for minute hand */
-.clock .minute{}
+/* .clock .minute{} */
 
 /* Overwriting properties for hour hand */
 .clock .hour{
